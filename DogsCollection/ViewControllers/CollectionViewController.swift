@@ -27,15 +27,13 @@ class CollectionViewController: UICollectionViewController {
         stepper.value = 2
     }
 
-    /*
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        guard let detailsVC = segue.destination as? DetailsViewController else { return }
+        guard let index = collectionView.indexPathsForSelectedItems?.first?.item else { return }
+        detailsVC.image = dogs[index].name
     }
-    */
 
     // MARK: UICollectionViewDataSource
 

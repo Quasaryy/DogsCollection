@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D222004929847DE5000C777A /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D222004829847DE5000C777A /* DetailsViewController.swift */; };
 		D2B6BCD229842AFE00291C43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6BCD129842AFE00291C43 /* AppDelegate.swift */; };
 		D2B6BCD429842AFE00291C43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B6BCD329842AFE00291C43 /* SceneDelegate.swift */; };
 		D2B6BCD929842AFE00291C43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B6BCD729842AFE00291C43 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D222004829847DE5000C777A /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		D2B6BCCE29842AFE00291C43 /* DogsCollection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DogsCollection.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B6BCD129842AFE00291C43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2B6BCD329842AFE00291C43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				D2B6BCE52984316000291C43 /* CollectionViewController.swift */,
 				D2B6BCE7298431D700291C43 /* CollectionViewCell.swift */,
+				D222004829847DE5000C777A /* DetailsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				D2B6BCE8298431D700291C43 /* CollectionViewCell.swift in Sources */,
 				D2B6BCED298432B200291C43 /* Dog.swift in Sources */,
 				D2B6BCD429842AFE00291C43 /* SceneDelegate.swift in Sources */,
+				D222004929847DE5000C777A /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

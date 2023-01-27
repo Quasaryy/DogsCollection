@@ -3,12 +3,13 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Collection View Controller-->
+        <!--Dogs Collection-->
         <scene sceneID="jxA-Eu-7Cm">
             <objects>
                 <collectionViewController id="rhu-3X-6QL" customClass="CollectionViewController" customModule="DogsCollection" customModuleProvider="target" sceneMemberID="viewController">
@@ -43,6 +44,7 @@
                                 </collectionViewCellContentView>
                                 <connections>
                                     <outlet property="imageView" destination="EFM-bG-gfA" id="jJ6-vh-zCs"/>
+                                    <segue destination="tUT-t2-BBO" kind="presentation" id="uXJ-K7-ji6"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -51,8 +53,7 @@
                             <outlet property="delegate" destination="rhu-3X-6QL" id="azS-Hc-Jou"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="oHy-jH-edW">
-                        <nil key="title"/>
+                    <navigationItem key="navigationItem" title="Dogs Collection" id="oHy-jH-edW">
                         <stepper key="titleView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="yVT-Tn-uPg">
                             <rect key="frame" x="140.5" y="6" width="94" height="32"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -68,6 +69,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TG-PS-tj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1046" y="54"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="GLr-Rt-bWM">
+            <objects>
+                <viewController id="tUT-t2-BBO" customClass="DetailsViewController" customModule="DogsCollection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wXH-rl-ovC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hs2-2L-Xh2">
+                                <rect key="frame" x="0.0" y="223.5" width="375" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ths-lX-jJc"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="03j-DC-SgL">
+                                <rect key="frame" x="117" y="559" width="141" height="28"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title=" Tap to share" image="square.and.arrow.up" catalog="system">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="shareButtonAction:" destination="tUT-t2-BBO" eventType="touchUpInside" id="CW1-yz-TQQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="07x-jQ-lLE"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Hs2-2L-Xh2" firstAttribute="trailing" secondItem="07x-jQ-lLE" secondAttribute="trailing" id="Elm-rW-Kuh"/>
+                            <constraint firstItem="Hs2-2L-Xh2" firstAttribute="leading" secondItem="07x-jQ-lLE" secondAttribute="leading" id="FTz-Pk-ecR"/>
+                            <constraint firstItem="03j-DC-SgL" firstAttribute="centerX" secondItem="wXH-rl-ovC" secondAttribute="centerX" id="Wqp-07-BzB"/>
+                            <constraint firstItem="Hs2-2L-Xh2" firstAttribute="centerY" secondItem="wXH-rl-ovC" secondAttribute="centerY" id="rwg-ft-glm"/>
+                            <constraint firstItem="07x-jQ-lLE" firstAttribute="bottom" secondItem="03j-DC-SgL" secondAttribute="bottom" constant="60" id="uyG-Cd-fwh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="hM5-VV-JHB"/>
+                    <connections>
+                        <outlet property="imageView" destination="Hs2-2L-Xh2" id="tep-5Z-gw5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFK-5p-jMA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1861.5999999999999" y="53.523238380809602"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1U9-iT-Ueu">
@@ -89,6 +136,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
