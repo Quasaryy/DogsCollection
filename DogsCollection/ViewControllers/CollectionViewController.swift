@@ -11,14 +11,20 @@ class CollectionViewController: UICollectionViewController {
     
     // MARK: - Properties
     let dogs = Dog.getDetails()
-    let cellsInRow: CGFloat = 2
+    var cellsInRow: CGFloat = 2
     let sectionInsets = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+    
+    // MARK: - IB Outletd
+    @IBOutlet var stepper: UIStepper!
+    
 
     // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        stepper.minimumValue = 1
+        stepper.maximumValue = 4
+        stepper.value = 2
     }
 
     /*
@@ -47,9 +53,13 @@ class CollectionViewController: UICollectionViewController {
     
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
+    
+    // MARK: - IB Action
+    @IBAction func stepperAction(_ sender: UIStepper) {
+        cellsInRow = sender.value
+        collectionView.reloadData()
+    }
+    
 }
 
 // MARK: UICollectionViewDelegateFlowLayout

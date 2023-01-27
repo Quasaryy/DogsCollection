@@ -51,7 +51,19 @@
                             <outlet property="delegate" destination="rhu-3X-6QL" id="azS-Hc-Jou"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="oHy-jH-edW"/>
+                    <navigationItem key="navigationItem" id="oHy-jH-edW">
+                        <nil key="title"/>
+                        <stepper key="titleView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="yVT-Tn-uPg">
+                            <rect key="frame" x="140.5" y="6" width="94" height="32"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="stepperAction:" destination="rhu-3X-6QL" eventType="valueChanged" id="4Pj-FF-be6"/>
+                            </connections>
+                        </stepper>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="stepper" destination="yVT-Tn-uPg" id="1xc-OA-dpn"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9TG-PS-tj4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
